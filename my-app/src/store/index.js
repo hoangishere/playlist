@@ -1,3 +1,5 @@
+import React from 'react';
+import {useSelector} from 'react-redux'
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 const songsSlice = createSlice ({
@@ -8,7 +10,7 @@ const songsSlice = createSlice ({
       state.push(action.payload);
     },
     removeSong(state, action) {
-      //
+      // 
     }
   }
 })
@@ -19,4 +21,14 @@ const store = configureStore({
   }
 })
 
-console.log(store)
+const startingState = store.getState();
+console.log(JSON.stringify(startingState));
+
+store.dispatch({
+  type: 'song/addSong',
+  payload: 'New Song!!!'
+});
+
+const finalState = store.getState();
+console.log(JSON.stringify(finalState));
+
