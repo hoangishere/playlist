@@ -24,12 +24,12 @@ const store = configureStore({
   }
 })
 
-// console.log(songsSlice.actions.addSong());
-// console.log(store)
-const startingState = store.getState();
-console.log(JSON.stringify(startingState));
+export { store };
 
-store.dispatch(songsSlice.actions.addSong("Some Song!"));
+// const startingState = store.getState();
+// console.log(JSON.stringify(startingState));
 
-const finalState = store.getState();
-console.log(JSON.stringify(finalState));
+// store.dispatch(songsSlice.actions.addSong("Some Song!"));
+
+// const finalState = store.getState();
+// console.log(JSON.stringify(finalState));
